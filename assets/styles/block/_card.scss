@@ -1,0 +1,23 @@
+/* Extending the base _card.scss from bootstrap */
+.card--hover {
+  &,
+  & * {
+    transition-property: background-color, box-shadow;
+  }
+
+  &:hover, &:focus, &:focus-within, &:focus-visible {
+    // --card-cap-bg: var(--primary-light);
+    --card-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.45);
+  }
+}
+
+@include color-mode(dark) {
+  /* Extending the base _card.scss from bootstrap */
+  .card--hover {
+    &:hover, &:focus, &:focus-within, &:focus-visible {
+      --card-bg: var(--dark);
+      --card-cap-bg: var(--primary-light);
+      --card-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 1);
+    }
+  }
+}

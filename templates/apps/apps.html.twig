@@ -1,0 +1,40 @@
+{% extends '@FSchmidDevCore/base.html.twig' %}
+
+{% block metas %}
+    {% set uri = app.request.uri %}
+    {% if uri != 'https://fschmid.dev/apps' and uri != 'https://www.fschmid.dev/apps' %}
+        <meta name="robots" content="noindex">
+    {% endif %}
+{% endblock %}
+
+{% block fullTitle %}{{ 'page.apps.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mb-0">{{ 'page.apps.title'|trans }}</h1>
+                <h2 class="mb-0 lead">{{ 'page.apps.subtitle'|trans }}</h2>
+                <hr>
+            </div>
+            {% for groupId, appGroup in appList|default([]) %}
+                <h3>{{ ('appList.group.'~groupId)|trans }}</h3>
+                {% for appId, appUrl in appGroup|default() %}
+                    <div class="col-12 col-md-6 mb-4">
+                        <a href="{{ appUrl }}" class="card card--hover animate-color-change h-100">
+                            <div class="card-header animate-color-change flex-column">
+                                <h2 class="h3 mb-0">
+                                    <i class="{{ ('appList.'~appId~'.icon')|trans }} me-2"></i>
+                                    <b>{{ ('appList.'~appId~'.title')|trans }}</b>
+                                </h2>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">{{ ('appList.'~appId~'.desc')|trans }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

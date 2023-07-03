@@ -1,0 +1,18 @@
+<footer id="footer" class="footer animate-color-change">
+    <div class="container">
+        <ul class="menu menu--divider">
+            {% block footer_items %}
+                <li class="menu-item {% if app.request.get('_route') == 'imprint'%}active{% endif %}">
+                    <a href="{{ path('app_home', { slug: 'impressum' }) }}" class="menu-link" title="{{ 'menu.imprint'|trans }}">
+                        {{ 'menu.imprint'|trans }}
+                    </a>
+                </li>
+                <li class="menu-item {% if app.request.get('_route') == 'privacy'%}active{% endif %}">
+                    <a href="{{ path('app_home', { slug: 'datenschutz' }) }}" class="menu-link" title="{{ 'menu.privacy'|trans }}">
+                        {{ 'menu.privacy'|trans }}
+                    </a>
+                </li>
+            {% endblock %}
+        </ul>
+    </div>
+</footer>

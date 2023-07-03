@@ -1,0 +1,41 @@
+{% block mmenu_footer %}
+    <div class="row py-3">
+        <span class="col-6 col-md-3 mb-2 mb-sm-3 mb-md-0">
+            {# TODO: Link to imprint #}
+            <a href="#">{{ 'menu.imprint'|trans }}</a>
+        </span>
+        <span class="col-6 col-md-3 mb-2 mb-sm-3 mb-md-0">
+            {# TODO: Link to privacy #}
+            <a href="#">{{ 'menu.privacy'|trans }}</a>
+        </span>
+        <span class="col-6 col-md-3 mb-2 mb-sm-3 mb-md-0">
+            <a href="{{ path('fschmiddev_core_apps') }}" title="{{ 'menu.apps'|trans }}">
+                <span class="fa-layers fa-fw me-2">
+                    {% for y in ['up-8', '', 'down-8'] %}
+                        {% for x in ['left-8', '', 'right-8'] %}
+                            <i class="fas fa-fw fa-square"
+                               data-fa-transform="shrink-10 {{ y }} {{ x }}"></i>
+                        {% endfor %}
+                    {% endfor %}
+                </span>
+                {{ 'menu.apps'|trans }}
+            </a>
+        </span>
+        <span class="col-6 col-md-3 mb-2 mb-sm-3 mb-md-0 d-flex" {{ stimulus_controller('theme-toggle') }}>
+            <a href="#" class="mx-auto" {{ stimulus_action('theme-toggle', 'toggle') }}>
+                <div class="theme-dark-hide" title="{{ 'menu.theme.change_to_dark'|trans }}">
+                    <span class="d-flex flex-row align-items-center">
+                        <i class="fas fa-moon fa-fw me-2 me-lg-0"></i>
+                        <span>{{ 'menu.theme.dark_short'|trans }}</span>
+                    </span>
+                </div>
+                <div class="theme-light-hide" title="{{ 'menu.theme.change_to_light'|trans }}">
+                    <span class="d-flex flex-row align-items-center">
+                        <i class="fas fa-sun fa-fw me-2 me-lg-0"></i>
+                        <span>{{ 'menu.theme.light_short'|trans }}</span>
+                    </span>
+                </div>
+            </a>
+        </span>
+    </div>
+{% endblock %}

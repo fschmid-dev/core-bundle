@@ -1,0 +1,150 @@
+<header
+        id="header"
+        class="header navbar navbar-expand-md navbar-dark py-0 sticky-top sticky justify-content-between animate-color-change"
+        {{ stimulus_controller('mmenu', {
+            navbarContent: include('@FSchmidDevCore/layout/mmenu/_navbar.html.twig'),
+            footerContent: include('@FSchmidDevCore/layout/mmenu/_footer.html.twig')
+        }) }}
+>
+    <div class="container-fluid align-items-stretch">
+        {% block header_brand %}
+            <a href="{{ path('app_home') }}" class="navbar-brand header__brand align-self-stretch"
+               title="{{ 'app.name'|trans }}">
+                {% block header_brand_name %}
+                    {% block header_brand_logo %}<i class="{{ 'app.icon'|trans }}"></i>{% endblock %}
+                    {{ 'app.name'|trans }}
+                {% endblock %}
+            </a>
+        {% endblock %}
+        <nav class="d-lg-none">
+            <ul class="menu align-items-center">
+                {% if app.user %}
+                    <li class="menu-item">
+                        <a href="{{ path('app_account') }}" class="menu-link">
+                            {% include '@FSchmidDevCore/account/_profile-picture.html.twig' with {small: true} %}
+                        </a>
+                    </li>
+                {% endif %}
+                <li class="menu-item" {{ stimulus_controller('mburger', {
+                    mBurger: '<mm-burger
+                            class="menu-toggle"
+                            menu="mmenu"
+                            fx="spin"
+                            role="button"
+                            tabindex="0"
+                            title="Open the menu TODO: translate">
+                            </mm-burger>'
+                }) }}>
+                </li>
+            </ul>
+        </nav>
+        <nav id="menu" class="d-none d-lg-block">
+            <ul class="header__menu menu my-auto">
+                {% block header_items %}
+                    {% if not app.user %}
+                        <li class="menu-item">
+                            <a class="menu-link" href="{{ path('app_login') }}">
+                                <i class="fas fa-right-to-bracket fa-fw me-2"></i>{{ 'menu.login'|trans }}
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-link" href="{{ path('app_register') }}">
+                                <i class="fas fa-user-plus fa-fw me-2"></i> {{ 'menu.register'|trans }}
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    <li class="menu-item" id="appsDropdown">
+                        <a class="menu-link" href="{{ path('fschmiddev_core_apps') }}" id="appsDropdownMenuLink" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="mb-2 mb-sm-0">
+                                <span class="fa-layers fa-fw me-2">
+                                    {% for y in ['up-8', '', 'down-8'] %}
+                                        {% for x in ['left-8', '', 'right-8'] %}
+                                            <i class="fas fa-fw fa-square"
+                                               data-fa-transform="shrink-10 {{ y }} {{ x }}"></i>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </span>
+                                {{ 'menu.apps'|trans }}
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-lg-end menu-user-dropdown p-3 rounded-0 rounded-bottom"
+                            aria-labelledby="appsDropdownMenuLink">
+                            <li class="d-flex flex-row flex-wrap overflow-y-scroll" style="max-height: 200px;">
+                                {% for groupId, appGroup in appList|default([]) %}
+                                    <div class="list {% if not loop.last %} mb-3 pb-3 border-bottom{% endif %}" style="min-width: 400px;">
+                                        <p class="mb-1"><b>{{ ('appList.group.' ~ groupId)|trans }}</b></p>
+                                        {% for appId, appUrl in appGroup|default([]) %}
+                                            <a href="{{ appUrl }}" class="list__item list__item--with-hover">
+                                                <span class="d-flex flex-nowrap align-items-center mb-1">
+                                                    <i class="{{ ('appList.'~appId~'.icon')|trans }} me-2"></i>
+                                                    <b class="text-nowrap">{{ ('appList.'~appId~'.title')|trans }}</b>
+                                                </span>
+                                                <span class="text-body">{{ ('appList.'~appId~'.desc')|trans }}</span>
+                                            </a>
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                            </li>
+                        </ul>
+                    </li>
+                    {% if app.user %}
+                        <li class="menu-item" id="accountDropdown">
+                            <a class="menu-link" href="{{ path('app_account') }}" id="navbarDarkDropdownMenuLink"
+                               role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="mb-2 mb-sm-0">
+                                    {% include '@FSchmidDevCore/account/_profile-picture.html.twig' with {small: true} %}
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-lg-end menu-user-dropdown p-3 rounded-0 rounded-bottom"
+                                aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li class="d-flex flex-row flex-wrap">
+                                    <div class="d-flex flex-row mb-3 align-items-center">
+                                        <span class="mb-2 mb-sm-0 me-3">
+                                            {% include '@FSchmidDevCore/account/_profile-picture.html.twig' with {small: true} %}
+                                        </span>
+                                        <span class="text-nowrap">
+                                            <b>{{ app.user.userIdentifier }}</b><br>
+                                            <span>{{ app.user.email }}</span>
+                                            {%- if app.user.fullName -%}
+                                                <br>
+                                                <span>{{ app.user.fullName }}</span>
+                                            {%- endif -%}
+                                        </span>
+                                    </div>
+                                    <div class="d-flex flex-column w-100">
+                                        <a href="{{ path('app_account') }}"
+                                           class="button button--primary button--small mb-3 text-nowrap text-center">
+                                            {{ "menu.manage_account"|trans }}
+                                        </a>
+                                        <a href="{{ path("app_logout") }}"
+                                           class="button button--small text-nowrap text-center">
+                                            {{ "menu.logout"|trans }}
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                    <li class="menu-item" {{ stimulus_controller('theme-toggle') }}>
+                        <a href="#" class="menu-link" {{ stimulus_action('theme-toggle', 'toggle') }}>
+                            <div class="theme-dark-hide" title="{{ 'menu.theme.change_to_dark'|trans }}">
+                                <i class="fas fa-moon fa-lg fa-fw me-2 me-lg-0"></i>
+                                <div class="d-inline-block d-lg-none">{{ 'menu.theme.dark'|trans }}</div>
+                            </div>
+                            <div class="theme-light-hide" title="{{ 'menu.theme.change_to_light'|trans }}">
+                                <i class="fas fa-sun fa-lg fa-fw me-2 me-lg-0"></i>
+                                <div class="d-inline-block d-lg-none">{{ 'menu.theme.light'|trans }}</div>
+                            </div>
+                        </a>
+                    </li>
+                {% endblock %}
+            </ul>
+        </nav>
+        {% block mmenu %}
+            {{ include('@FSchmidDevCore/layout/mmenu/_mmenu.html.twig') }}
+        {% endblock %}
+    </div>
+</header>

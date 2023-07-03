@@ -1,0 +1,39 @@
+{
+  "name": "fschmid-dev/core-bundle",
+  "description": "This bundle provides default styling, templates and base-logic shared between fschmid.dev-Apps.",
+  "type": "symfony-bundle",
+  "authors": [
+    {
+      "name": "FSchmid",
+      "email": "info@fschmid.dev"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=8.1",
+    "symfony/framework-bundle": "^6.0",
+    "symfony/flex": ">=2.0",
+    "symfony/webpack-encore-bundle": "^1.11 | ^2.0",
+    "symfony/ux-turbo": "^2.7",
+    "symfony/stimulus-bundle": "^2.9"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "FSchmidDev\\CoreBundle\\": "src/"
+    }
+  },
+  "scripts": {
+    "auto-scripts": {
+      "cache:clear": "symfony-cmd",
+      "assets:install %PUBLIC_DIR%": "symfony-cmd"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/flex": true
+    }
+  }
+}

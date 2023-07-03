@@ -1,0 +1,50 @@
+<nav id="mmenu" class="animate-color-change">
+    <ul id="panel-menu" class="container animate-color-change">
+        {% block header_mmenu_items %}
+            {% if not app.user %}
+                <li>
+                    <a href="{{ path('app_login') }}" title="{{ 'menu.login'|trans }}">
+                        <i class="fas fa-right-to-bracket fa-fw me-2"></i>{{ 'menu.login'|trans }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('app_register') }}" title="{{ 'menu.register'|trans }}">
+                        <i class="fas fa-fw fa-user-plus me-2"></i>{{ 'menu.register'|trans }}
+                    </a>
+                </li>
+            {% endif %}
+            <li>
+                <a href="{{ path('fschmiddev_core_apps') }}" title="{{ 'menu.apps'|trans }}">
+                    <span class="fa-layers fa-fw me-2">
+                        {% for y in ['up-8', '', 'down-8'] %}
+                            {% for x in ['left-8', '', 'right-8'] %}
+                                <i class="fas fa-fw fa-square"
+                                   data-fa-transform="shrink-10 {{ y }} {{ x }}"></i>
+                            {% endfor %}
+                        {% endfor %}
+                    </span>
+                    {{ 'menu.apps'|trans }}
+                </a>
+                <ul class="container animate-color-change">
+                    {% for groupId, appGroup in appList|default([]) %}
+                        <li class="active">
+                            <span><b>{{ ('appList.group.' ~ groupId)|trans }}</b></span>
+                        </li>
+                        {% for id, url in appGroup %}
+                            <li>
+                                <a href='{{ url }}' title="{{ ('appList.'~id~'.title')|trans }}"
+                                   class="d-flex flex-column">
+                                <span class="d-flex flex-row align-items-center">
+                                    <i class="{{ ('appList.'~id~'.icon')|trans }} me-2"></i>
+                                    <b>{{ ('appList.'~id~'.title')|trans }}</b>
+                                </span>
+                                    <small class="text-wrap text-break">{{ ('appList.'~id~'.desc')|trans }}</small>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endblock %}
+    </ul>
+</nav>

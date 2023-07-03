@@ -1,0 +1,14 @@
+:root {
+  color-scheme: light dark;
+}
+
+.main {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+
+}
+
+.animate-color-change {
+  transition-duration: var(--transition-duration);
+  transition-timing-function: ease;
+  transition-property: background-color, color, border-color, border-bottom-color, border-left-color, border-right-color, border-top-color;
+}

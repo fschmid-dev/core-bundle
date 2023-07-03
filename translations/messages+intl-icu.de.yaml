@@ -1,0 +1,57 @@
+app:
+  name: <Override Name>
+  icon: fas fa-code fa-xl
+
+appList:
+  group:
+    main: Main
+    pnp: PnP
+  coc:
+    desc: Ein Verwaltungstool für Call of Cthulhu Investigatoren und Kampagnen
+    icon: fas fa-fw fa-code
+    title: CoC Manager
+  home:
+    desc: Mein Portfolio
+    icon: fas fa-fw fa-home
+    title: Homepage
+  user:
+    desc: Hier wird die Anmeldung/Registrierung und das Benutzerkonto verwaltet.
+    icon: fas fa-fw fa-user-gear
+    title: Konto-Verwaltung
+
+general:
+  back: zurück
+  delete: löschen
+  edit: bearbeiten
+  save: speichern
+
+menu:
+  account: Konto
+  apps: Apps
+  manage_account: Konto verwalten
+  imprint: Impressum
+  login: Anmelden
+  logout: Abmelden
+  oauth: Verknüpfte Konten
+  privacy: Datenschutz
+  register: Registrieren
+  security: Sicherheit
+  theme:
+    change_to_light: 'zum hellen Design wechseln'
+    change_to_dark: 'zum dunklen Design wechseln'
+    dark: 'Dunkler Modus'
+    dark_short: 'Dunkel'
+    light: 'Heller Modus'
+    light_short: 'Hell'
+
+mmenu:
+  login_or_register: Jetzt einfach anmelden oder registrieren!
+
+page:
+  apps:
+    title: FSchmid Apps
+    subtitle: Eine Auflistung der verfügbaren Apps
+
+user:
+  logged_in_as: 'Angemeldet als'
+  logged_in_as_user: 'Angemeldet als {username}'

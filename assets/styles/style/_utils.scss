@@ -1,0 +1,44 @@
+:root {
+  --blockquote-bg: var(--light);
+
+  &.theme-dark {
+    --blockquote-bg: var(--dark);
+  }
+}
+
+.text-body-color {
+  color: var(--body-color);
+}
+
+.text-box--gray {
+  background-color: var(--blockquote-bg);
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+@include color-mode(dark) {
+  .theme-dark-hide {
+    display: none;
+  }
+}
+
+@include color-mode(light) {
+  .theme-light-hide {
+    display: none;
+  }
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,90 @@
+:root {
+  --primary-h: 195;
+  --primary-s: 73.6%;
+  --primary-l: 20.8%;
+
+  --secondary-h: 196;
+  --secondary-s: 80.4%;
+  --secondary-l: 56.1%;
+
+  --orange-h: 27;
+  --orange-s: 98%;
+  --orange-l: 54%;
+
+  --green-h: 121;
+  --green-s: 49%;
+  --green-l: 46%;
+
+  --red-h: 354;
+  --red-s: 70.5%;
+  --red-l: 53.5%;
+
+  --color-light-delta: 15%;
+  --color-dark-delta: 15%;
+
+  --primary-light: hsl(var(--primary-h), var(--primary-s), calc(var(--primary-l) + var(--color-light-delta)));
+  --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  --primary-dark: hsl(var(--primary-h), var(--primary-s), calc(var(--primary-l) - var(--color-dark-delta)));
+  --primary-rgb: 14, 72, 92;
+
+  --secondary-light: hsl(var(--secondary-h), var(--secondary-s), calc(var(--secondary-l) + var(--color-light-delta)));
+  --secondary: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l));
+  --secondary-dark: hsl(var(--secondary-h), var(--secondary-s), calc(var(--secondary-l) - var(--color-dark-delta)));
+  --secondary-rgb: 53, 185, 233;
+
+  --orange-light: hsl(var(--orange-h), var(--orange-s), calc(var(--orange-l) + var(--color-light-delta)));
+  --orange: hsl(var(--orange-h), var(--orange-s), var(--orange-l));
+  --orange-dark: hsl(var(--orange-h), var(--orange-s), calc(var(--orange-l) - var(--color-dark-delta)));
+
+  --green-light: hsl(var(--green-h), var(--green-s), calc(var(--green-l) + var(--color-light-delta)));
+  --green: hsl(var(--green-h), var(--green-s), var(--green-l));
+  --green-dark: hsl(var(--green-h), var(--green-s), calc(var(--green-l) - var(--color-dark-delta)));
+
+  --red-light: hsl(var(--red-h), var(--red-s), calc(var(--red-l) + var(--color-light-delta)));
+  --red: hsl(var(--red-h), var(--red-s), var(--red-l));
+  --red-dark: hsl(var(--red-h), var(--red-s), calc(var(--red-l) - var(--color-dark-delta)));
+
+  --danger: #A94442;
+  --danger-background: #F2DEDE;
+  --danger-border: #EBCCD1;
+
+  --info: #31708F;
+  --info-background: #D9EDF7;
+  --info-border: #BCE8F1;
+
+  --success: #3C763D;
+  --success-background: #DFF0D8;
+  --success-border: #D6E9C6;
+
+  --warning: #8A6D3B;
+  --warning-background: #FCF8E3;
+  --warning-border: #FAEBCC;
+
+  --header-bg: var(--primary);
+  --header-hover: var(--primary-light);
+  --header-border-color: var(--primary);
+  --footer-bg: var(--secondary);
+  --footer-hover: var(--secondary-dark);
+
+  --color-menu-bg-hover: var(--primary-light);
+  --color-menu: white;
+  --color-menu-hover: white;
+
+  --color-mobile-menu-bg: var(--body-color);
+
+  --link-color: var(--primary);
+  --link-hover-color: var(--primary-light);
+
+  --input-bg: var(--body-bg);
+  --input-color: var(--body-color);
+  --input-border-color: var(--gray-400);
+
+  --input-disabled-color: var(--dark);
+  --input-disabled-bg: var(--light);
+  --input-disabled-border-color: var(--input-border-color);
+
+  --header-height: 56px;
+  --footer-height: 40px;
+
+  --transition-duration: .5s;
+}

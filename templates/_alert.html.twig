@@ -1,0 +1,16 @@
+<div class="alert alert--{{ type|default('info') }}" {{ stimulus_controller('alert', {
+    closeCircleDuration: closeCircleDuration|default(3000)
+}) }} role="alert">
+    <div class="container">
+        {{ message|trans|raw }}
+        <a class="alert__close {% if withTimeout|default(false) %}circle{% endif %}" {{ stimulus_action('alert', 'close') }}>
+            {% if withTimeout|default(false) %}
+                <svg width="32" height="32" class="circle__svg">
+                    <circle cx="16" cy="16" r="13" class="circle__progress circle__progress--fill" {{ stimulus_target('alert', 'progress') }}></circle>
+                </svg>
+            {% endif %}
+
+            <i class="fas fa-xmark fa-lg"></i>
+        </a>
+    </div>
+</div>

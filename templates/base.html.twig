@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block metas %}{% endblock %}
+    <title>{% block fullTitle %}{% block title %}{% endblock %} - {{ 'app.name'|trans }}{% endblock %}</title>
+    {% block favicon %}
+        <link rel="icon"
+              href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {% endblock %}
+
+    {% include ('@FSchmidDevCore/layout/_variables.html.twig') %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block head_javascripts %}
+        <script>
+            let theme = getCookie('theme');
+            if (!theme) {
+                theme = 'light';
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    theme = 'dark';
+                }
+                // TODO: update Cookie domain
+                setCookie('theme', theme, 60, '.fschmid.wip')
+            }
+            document.getElementsByTagName('html')[0].dataset.bsTheme = theme;
+
+            /*
+            let theme = window.localStorage.getItem('theme');
+            console.log(theme);
+            if (!theme) {
+                theme = 'light';
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    theme = 'dark';
+                }
+                window.localStorage.setItem('theme', theme);
+            }
+            document.getElementsByTagName('html')[0].className = `theme-${theme}`;
+             */
+
+            function getCookie(cname) {
+                let name = cname + '=';
+                let decodedCookie = decodeURIComponent(document.cookie);
+                let ca = decodedCookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) === ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) === 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return false;
+            }
+
+            function setCookie(cname, cvalue = false, exdays = 60, cdomain = null) {
+                const d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                let expires = "expires="+d.toUTCString();
+                let cookieString =  cname + "=" + cvalue + ";" + expires + ";path=/";
+
+                if (cdomain) {
+                    cookieString += ';domain=' + cdomain;
+                }
+
+                document.cookie = cookieString;
+            }
+        </script>
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body class="animate-color-change {% block body_classes %}{% endblock %}" {% block body_attributes %}{% endblock %}>
+{% block header %}
+    {% include '@FSchmidDevCore/layout/_header.html.twig' %}
+{% endblock %}
+{% block alerts %}
+    {% include '@FSchmidDevCore/_alerts.html.twig' %}
+{% endblock %}
+
+{% block main %}
+    <div class="main pt-3">
+        {% block body %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}{% endblock %}
+
+<div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+{% block footer %}
+    {% include '@FSchmidDevCore/layout/_footer.html.twig' %}
+{% endblock %}
+
+<a class="mm-wrapper__blocker mm-blocker mm-slideout" id="mm-0" aria-label="Close menu" inert="true" href="#mm-1"></a>
+</body>
+</html>
