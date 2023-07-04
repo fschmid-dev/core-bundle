@@ -28,7 +28,7 @@ general:
 menu:
   account: Konto
   apps: Apps
-  manage_account: Konto verwalten
+  manageAccount: Konto verwalten
   imprint: Impressum
   login: Anmelden
   logout: Abmelden
@@ -37,15 +37,15 @@ menu:
   register: Registrieren
   security: Sicherheit
   theme:
-    change_to_light: 'zum hellen Design wechseln'
-    change_to_dark: 'zum dunklen Design wechseln'
+    changeToLight: 'zum hellen Design wechseln'
+    changeToDark: 'zum dunklen Design wechseln'
     dark: 'Dunkler Modus'
-    dark_short: 'Dunkel'
+    darkShort: 'Dunkel'
     light: 'Heller Modus'
-    light_short: 'Hell'
+    lightShort: 'Hell'
 
 mmenu:
-  login_or_register: Jetzt einfach anmelden oder registrieren!
+  loginOrRegister: Jetzt einfach anmelden oder registrieren!
 
 page:
   apps:
@@ -53,5 +53,5 @@ page:
     subtitle: Eine Auflistung der verfügbaren Apps
 
 user:
-  logged_in_as: 'Angemeldet als'
-  logged_in_as_user: 'Angemeldet als {username}'
+  loggedInAs: 'Angemeldet als'
+  loggedInAsUser: 'Angemeldet als {username}'

@@ -30,8 +30,8 @@
   --button-green-bg: var(--green);
   --button-green-border: var(--green);
   --button-green-color: var(--white);
-  --button-green-bg-hover: var(--green-dark);
-  --button-green-border-hover: var(--green-dark);
+  --button-green-bg-hover: var(--green-light);
+  --button-green-border-hover: var(--green-light);
   --button-green-color-hover: var(--white);
 
   --button-red-bg: var(--red);
@@ -49,23 +49,23 @@
   font-size: 1rem;
   font-weight: bold;
   line-height: 1rem;
-  background-color: var(--button-bg)!important;
+  background-color: var(--button-bg) !important;
   border-width: 2px;
   border-style: solid;
-  border-color: var(--button-border)!important;
-  color: var(--button-color)!important;
+  border-color: var(--button-border) !important;
+  color: var(--button-color) !important;
   border-radius: .25rem;
   cursor: pointer;
-  transition: color .5s ease,  background-color .5s ease,  border-color .5s ease;
+  transition: color .5s ease, background-color .5s ease, border-color .5s ease;
   text-decoration: none;
 
   &:active,
   &:focus,
   &:focus-visible,
   &:hover {
-    background-color: var(--button-bg-hover)!important;
-    border-color: var(--button-border-hover)!important;
-    color: var(--button-color-hover)!important;
+    background-color: var(--button-bg-hover) !important;
+    border-color: var(--button-border-hover) !important;
+    color: var(--button-color-hover) !important;
   }
 }
 
@@ -145,4 +145,13 @@
       border-bottom-right-radius: .25rem;
     }
   }
+}
+
+@include color-mode(dark) {
+  --button-bg: var(--dark);
+  --button-border: var(--dark);
+  --button-color: var(--body-color);
+  --button-bg-hover: var(--darker);
+  --button-border-hover: var(--dark);
+  --button-color-hover: var(--white);
 }

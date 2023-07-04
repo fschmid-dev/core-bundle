@@ -23,16 +23,16 @@
         </span>
         <span class="col-6 col-md-3 mb-2 mb-sm-3 mb-md-0 d-flex" {{ stimulus_controller('theme-toggle') }}>
             <a href="#" class="mx-auto" {{ stimulus_action('theme-toggle', 'toggle') }}>
-                <div class="theme-dark-hide" title="{{ 'menu.theme.change_to_dark'|trans }}">
+                <div class="theme-dark-hide" title="{{ 'menu.theme.changeToDark'|trans }}">
                     <span class="d-flex flex-row align-items-center">
                         <i class="fas fa-moon fa-fw me-2 me-lg-0"></i>
-                        <span>{{ 'menu.theme.dark_short'|trans }}</span>
+                        <span>{{ 'menu.theme.darkShort'|trans }}</span>
                     </span>
                 </div>
-                <div class="theme-light-hide" title="{{ 'menu.theme.change_to_light'|trans }}">
+                <div class="theme-light-hide" title="{{ 'menu.theme.changeToLight'|trans }}">
                     <span class="d-flex flex-row align-items-center">
                         <i class="fas fa-sun fa-fw me-2 me-lg-0"></i>
-                        <span>{{ 'menu.theme.light_short'|trans }}</span>
+                        <span>{{ 'menu.theme.lightShort'|trans }}</span>
                     </span>
                 </div>
             </a>

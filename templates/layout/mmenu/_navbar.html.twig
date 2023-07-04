@@ -5,16 +5,16 @@
                 {% include '@FSchmidDevCore/account/_profile-picture.html.twig' %}
             </span>
             <div>
-                <p>{{ 'user.logged_in_as'|trans }}<br><span class="text-break">{{ app.user.userIdentifier }}</span></p>
+                <p>{{ 'user.loggedInAs'|trans }}<br><span class="text-break">{{ app.user.userIdentifier }}</span></p>
                 <span>
-                    <a href="{{ path('app_account') }}" class="button button--primary mb-3">{{ 'menu.manage_account'|trans }}</a><br>
+                    <a href="{{ path('app_account') }}" class="button button--primary mb-3">{{ 'menu.manageAccount'|trans }}</a><br>
                     <a href='{{ path('app_logout') }}' class="button">{{ 'menu.logout'|trans }}</a>
                 </span>
             </div>
         </div>
     {%- else -%}
         <div class="container py-3 text-center d-flex flex-column animate-color-change">
-            <h4 class="mb-0"><b>{{ 'mmenu.login_or_register'|trans }}</b></h4>
+            <h4 class="mb-0"><b>{{ 'mmenu.loginOrRegister'|trans }}</b></h4>
         </div>
     {%- endif -%}
 {% endblock %}
