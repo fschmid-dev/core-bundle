@@ -1,3 +1,9 @@
+{% set withTimeout = false %}
+{% if type ends with '--timeout' %}
+    {% set withTimeout = true %}
+    {% set type = type|replace({'--timeout': ''}) %}
+{% endif %}
+
 <div class="alert alert--{{ type|default('info') }}" {{ stimulus_controller('alert', {
     closeCircleDuration: closeCircleDuration|default(3000)
 }) }} role="alert">
@@ -6,7 +12,8 @@
         <a class="alert__close {% if withTimeout|default(false) %}circle{% endif %}" {{ stimulus_action('alert', 'close') }}>
             {% if withTimeout|default(false) %}
                 <svg width="32" height="32" class="circle__svg">
-                    <circle cx="16" cy="16" r="13" class="circle__progress circle__progress--fill" {{ stimulus_target('alert', 'progress') }}></circle>
+                    <circle cx="16" cy="16" r="13"
+                            class="circle__progress circle__progress--fill" {{ stimulus_target('alert', 'progress') }}></circle>
                 </svg>
             {% endif %}
 

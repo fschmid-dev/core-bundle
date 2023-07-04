@@ -4,11 +4,6 @@
             {% block alert %}
                 {% if app.session.flashBag.peekAll %}
                     {% for type, messages in app.session.flashBag.all %}
-                        {% set withTimeout = false %}
-                        {% if type ends with '--timeout' %}
-                            {% set withTimeout = true %}
-                            {% set type = type|replace({'--timeout': ''}) %}
-                        {% endif %}
                         {% for message in messages %}
                             {% include '@FSchmidDevCore/_alert.html.twig' with { type: type, message: message|trans|raw } %}
                         {% endfor %}

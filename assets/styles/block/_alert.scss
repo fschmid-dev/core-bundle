@@ -1,0 +1,143 @@
+.alerts {
+  position: relative;
+  z-index: 50;
+}
+
+.alert_container {
+  width: 100%;
+}
+
+.alert {
+  --alert-border-radius: 0;
+  --alert-margin-bottom: 0;
+
+  padding: 1rem;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  transition: all 900ms ease;
+
+  > .container {
+    position: relative;
+    padding-right: 2rem;
+  }
+
+  .alert__link {
+    font-weight: bold;
+  }
+}
+
+.alert__close {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1;
+  transform: translateY(-50%);
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+
+  i, svg {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.alert--danger,
+.alert--error{
+  background-color: var(--danger-background);
+  border-color: var(--danger-border);
+  color: var(--danger);
+
+  .alert__close {
+    color: var(--danger);
+  }
+
+  a, .alert__link {
+    color: #491217;
+  }
+}
+
+.alert--info {
+  background-color: var(--info-background);
+  border-color: var(--info-border);
+  color: var(--info);
+
+  .alert__close {
+    color: var(--info);
+  }
+
+  a, .alert__link {
+    color: #062c33;
+  }
+}
+
+.alert--success {
+  background-color: var(--success-background);
+  border-color: var(--success-border);
+  color: var(--success);
+
+  .alert__close {
+    color: var(--success);
+  }
+
+  a, .alert__link {
+    color: #0b2e13;
+  }
+}
+
+.alert--warning {
+  background-color: var(--warning-background);
+  border-color: var(--warning-border);
+  color: var(--warning);
+
+  .alert__close {
+    color: var(--warning);
+  }
+
+  a, .alert__link {
+    color: #533f03;
+  }
+}
+
+.alert--close {
+  --initialStroke: 5;
+  --transitionDuration: 0;
+
+  height: 0!important;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.circle__svg {
+  transition: transform var(--transitionDuration) linear;
+  animation-name: rotate;
+  animation-duration: var(--transitionDuration);
+  animation-timing-function: linear;
+}
+.circle__progress {
+  fill: none;
+  stroke-width: 2;
+  stroke-opacity: 0.3;
+  stroke-linecap: round;
+  stroke: currentColor;
+}
+.circle__progress--fill {
+  stroke-opacity: 1;
+  stroke-dasharray: var(--initialStroke);
+  stroke-dashoffset: var(--initialStroke);
+  transition: stroke-dashoffset var(--transitionDuration) linear;
+}
+
+@keyframes rotate {
+  0% { transform: translate(-50%, -50%) rotate(-90deg) }
+  100% { transform: translate(-50%, -50%) rotate(630deg) }
+}

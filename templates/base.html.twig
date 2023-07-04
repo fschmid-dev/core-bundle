@@ -78,7 +78,7 @@
     {% include '@FSchmidDevCore/layout/_header.html.twig' %}
 {% endblock %}
 {% block alerts %}
-    {% include '@FSchmidDevCore/_alerts.html.twig' %}
+    {% include '@FSchmidDevCore/_alerts.html.twig' with { 'error': error } %}
 {% endblock %}
 
 {% block main %}

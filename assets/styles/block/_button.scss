@@ -1,0 +1,148 @@
+:root {
+  --button-bg: var(--light);
+  --button-border: var(--light);
+  --button-color: var(--body-color);
+  --button-bg-hover: var(--dark);
+  --button-border-hover: var(--dark);
+  --button-color-hover: var(--white);
+
+  --button-primary-bg: var(--primary);
+  --button-primary-border: var(--primary);
+  --button-primary-color: var(--white);
+  --button-primary-bg-hover: var(--primary-light);
+  --button-primary-border-hover: var(--primary-light);
+  --button-primary-color-hover: var(--white);
+
+  --button-secondary-bg: var(--secondary);
+  --button-secondary-border: var(--secondary);
+  --button-secondary-color: var(--white);
+  --button-secondary-bg-hover: var(--secondary-dark);
+  --button-secondary-border-hover: var(--secondary-dark);
+  --button-secondary-color-hover: var(--white);
+
+  --button-orange-bg: var(--orange);
+  --button-orange-border: var(--orange);
+  --button-orange-color: var(--body-color);
+  --button-orange-bg-hover: var(--orange-dark);
+  --button-orange-border-hover: var(--orange-dark);
+  --button-orange-color-hover: var(--white);
+
+  --button-green-bg: var(--green);
+  --button-green-border: var(--green);
+  --button-green-color: var(--white);
+  --button-green-bg-hover: var(--green-dark);
+  --button-green-border-hover: var(--green-dark);
+  --button-green-color-hover: var(--white);
+
+  --button-red-bg: var(--red);
+  --button-red-border: var(--red);
+  --button-red-color: var(--white);
+  --button-red-bg-hover: var(--red-dark);
+  --button-red-border-hover: var(--red-dark);
+  --button-red-color-hover: var(--white);
+}
+
+.button {
+  display: inline-block;
+  padding: .5rem .75rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1rem;
+  background-color: var(--button-bg)!important;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--button-border)!important;
+  color: var(--button-color)!important;
+  border-radius: .25rem;
+  cursor: pointer;
+  transition: color .5s ease,  background-color .5s ease,  border-color .5s ease;
+  text-decoration: none;
+
+  &:active,
+  &:focus,
+  &:focus-visible,
+  &:hover {
+    background-color: var(--button-bg-hover)!important;
+    border-color: var(--button-border-hover)!important;
+    color: var(--button-color-hover)!important;
+  }
+}
+
+.button--large {
+  line-height: 1.5;
+  padding: 10px 15px;
+}
+
+.button--small {
+  line-height: 1;
+  padding: 5px 10px;
+}
+
+.button--primary {
+  --button-bg: var(--button-primary-bg);
+  --button-border: var(--button-primary-border);
+  --button-color: var(--button-primary-color);
+  --button-bg-hover: var(--button-primary-bg-hover);
+  --button-border-hover: var(--button-primary-border-hover);
+  --button-color-hover: var(--button-primary-color-hover);
+}
+
+.button--secondary {
+  --button-bg: var(--button-secondary-bg);
+  --button-border: var(--button-secondary-border);
+  --button-color: var(--button-secondary-color);
+  --button-bg-hover: var(--button-secondary-bg-hover);
+  --button-border-hover: var(--button-secondary-border-hover);
+  --button-color-hover: var(--button-secondary-color-hover);
+}
+
+.button--orange {
+  --button-bg: var(--button-orange-bg);
+  --button-border: var(--button-orange-border);
+  --button-color: var(--button-orange-color);
+  --button-bg-hover: var(--button-orange-bg-hover);
+  --button-border-hover: var(--button-orange-border-hover);
+  --button-color-hover: var(--button-orange-color-hover);
+}
+
+.button--green {
+  --button-bg: var(--button-green-bg);
+  --button-border: var(--button-green-border);
+  --button-color: var(--button-green-color);
+  --button-bg-hover: var(--button-green-bg-hover);
+  --button-border-hover: var(--button-green-border-hover);
+  --button-color-hover: var(--button-green-color-hover);
+}
+
+.button--red {
+  --button-bg: var(--button-red-bg);
+  --button-border: var(--button-red-border);
+  --button-color: var(--button-red-color);
+  --button-bg-hover: var(--button-red-bg-hover);
+  --button-border-hover: var(--button-red-border-hover);
+  --button-color-hover: var(--button-red-color-hover);
+}
+
+.button--outline {
+  --button-bg: transparent;
+  --button-color: var(--button-border);
+}
+
+.button-group {
+  display: flex;
+
+  .button {
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: .25rem;
+      border-bottom-left-radius: .25rem;
+    }
+
+    &:last-child {
+      border-top-right-radius: .25rem;
+      border-bottom-right-radius: .25rem;
+    }
+  }
+}
