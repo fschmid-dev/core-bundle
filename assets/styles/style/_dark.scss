@@ -1,14 +1,19 @@
-@include color-mode(dark) {
+[data-bs-theme="dark"] {
   --body-bg: var(--gray-900);
   --body-color: white;
   --body-color-rgb: 255, 255, 255;
+
   --header-bg: var(--dark) !important;
   --header-border-color: var(--dark);
+
   --footer-bg: var(--gray-800);
+
   --color-mobile-menu-bg: var(--dark);
+
   --link-color: var(--secondary);
   --link-color-rgb: var(--secondary-rgb);
   --link-hover-color: var(--secondary-light);
+  --link-hover-color-rgb: var(--secondary-light-rgb);
 
   .mm-listitem {
     --mm-listitem-bg-hover: var(--dark);

@@ -1,12 +1,12 @@
-$primary:   #0e485c;
+$primary: #0e485c;
 $secondary: #35b9e9;
-$orange:    #fd7e14;
-$red:       #dc3545;
-$yellow:    #ffc107;
-$green:     #198754;
-$cyan:      #0dcaf0;
+$orange: #fd7e14;
+$red: #dc3545;
+$yellow: #ffc107;
+$green: #198754;
+$cyan: #0dcaf0;
 
-$white:    #fff;
+$white: #fff;
 $gray-100: #f8f9fc;
 $gray-200: #f1f3f9;
 $gray-300: #dee3ed;
@@ -16,42 +16,42 @@ $gray-600: #5e636e;
 $gray-700: #2f3237;
 $gray-800: #1d1e20;
 $gray-900: #111213;
-$black:    #000;
+$black: #000;
 
-$lighter:   $gray-200;
-$light:     $gray-400;
-$dark:      $gray-700;
-$darker:    $gray-800;
-$gray:      $gray-900;
+$lighter: $gray-200;
+$light: $gray-400;
+$dark: $gray-700;
+$darker: $gray-800;
+$gray: $gray-900;
 
-$success:   $green;
-$info:      $cyan;
-$warning:   $yellow;
-$danger:    $red;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
 
 $body-color: #111213;
 
 $colors: (
-        "green":      $green,
-        "cyan":       $cyan,
-        "yellow":     $yellow,
-        "red":        $red,
+        "green": $green,
+        "cyan": $cyan,
+        "yellow": $yellow,
+        "red": $red,
 );
 
 $theme-colors: (
-        "primary":    $primary,
-        "secondary":  $secondary,
-        "orange":     $orange,
-        "success":    $success,
-        "info":       $info,
-        "warning":    $warning,
-        "danger":     $danger,
-        "white":      $white,
-        "lighter":    $lighter,
-        "light":      $light,
-        "dark":       $dark,
-        "darker":     $darker,
-        "black":      $black,
+        "primary": $primary,
+        "secondary": $secondary,
+        "orange": $orange,
+        "success": $success,
+        "info": $info,
+        "warning": $warning,
+        "danger": $danger,
+        "white": $white,
+        "lighter": $lighter,
+        "light": $light,
+        "dark": $dark,
+        "darker": $darker,
+        "black": $black,
 );
 
 $body-bg: $gray-100;
@@ -88,9 +88,9 @@ $mb_module_cross: '.mm-ocd-opened .mburger';
 $mb_module_squeeze_cross: '.mm-ocd-opened .mburger--squeeze';
 $mb_animate_timeout: 0;
 
-$input-bg:            var(--input-bg);
-$input-color:         var(--input-color);
-$input-border-color:  var(--input-border-color);
+$input-bg: var(--input-bg);
+$input-color: var(--input-color);
+$input-border-color: var(--input-border-color);
 
 $input-disabled-color: var(--input-disabled-color) !default;
 $input-disabled-bg: var(--input-disabled-bg) !default;
@@ -101,17 +101,17 @@ $input-transition: background-color var(--transition-duration) ease, border-colo
 
 /*
 */
-$card-bg:             var(--body-bg);
-$card-color:          var(--body-color);
-$card-border-color:   var(--gray-400);
-$card-cap-bg:         var(--primary);
-$card-cap-color:      var(--white);
-$card-box-shadow:     0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$card-bg: var(--body-bg);
+$card-color: var(--body-color);
+$card-border-color: var(--gray-400);
+$card-cap-bg: var(--primary);
+$card-cap-color: var(--white);
+$card-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 
-$link-decoration:     none;
+$link-decoration: none;
 $link-hover-decoration: none;
 
-$modal-content-bg:    var(--body-bg);
+$modal-content-bg: var(--body-bg);
 
 $zindex-sticky: 100 !default;
 

@@ -25,16 +25,23 @@
   --primary-light: hsl(var(--primary-h), var(--primary-s), calc(var(--primary-l) + var(--color-light-delta)));
   --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
   --primary-dark: hsl(var(--primary-h), var(--primary-s), calc(var(--primary-l) - var(--color-dark-delta)));
+  --primary-light-rgb: 24, 125, 158;
   --primary-rgb: 14, 72, 92;
+  --primary-dark-rgb: 4, 20, 26;
 
   --secondary-light: hsl(var(--secondary-h), var(--secondary-s), calc(var(--secondary-l) + var(--color-light-delta)));
   --secondary: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l));
   --secondary-dark: hsl(var(--secondary-h), var(--secondary-s), calc(var(--secondary-l) - var(--color-dark-delta)));
+  --secondary-light-rgb: 122, 209, 241;
   --secondary-rgb: 53, 185, 233;
+  --secondary-dark-rgb: 21, 144, 189;
 
   --orange-light: hsl(var(--orange-h), var(--orange-s), calc(var(--orange-l) + var(--color-light-delta)));
   --orange: hsl(var(--orange-h), var(--orange-s), var(--orange-l));
   --orange-dark: hsl(var(--orange-h), var(--orange-s), calc(var(--orange-l) - var(--color-dark-delta)));
+  --orange-light-rgb: 253, 168, 98;
+  --orange-rgb: 253, 126, 20;
+  --orange-dark-rgb: 197, 90, 2;
 
   --green-light: hsl(var(--green-h), var(--green-s), calc(var(--green-l) + var(--color-light-delta)));
   --green: hsl(var(--green-h), var(--green-s), var(--green-l));
@@ -74,6 +81,7 @@
 
   --link-color: var(--primary);
   --link-hover-color: var(--primary-light);
+  --link-hover-color-rgb: var(--primary-light-rgb);
 
   --input-bg: var(--body-bg);
   --input-color: var(--body-color);
