@@ -11,6 +11,7 @@
   "license": "MIT",
   "require": {
     "php": ">=8.1",
+    "fschmid-dev/redirect-exception-bundle": "^1.0.0",
     "symfony/framework-bundle": "^6.0",
     "symfony/flex": ">=2.0",
     "symfony/webpack-encore-bundle": "^1.11 | ^2.0",
