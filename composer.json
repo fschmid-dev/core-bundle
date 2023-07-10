@@ -12,8 +12,10 @@
   "require": {
     "php": ">=8.1",
     "fschmid-dev/redirect-exception-bundle": "^1.0.0",
+    "stof/doctrine-extensions-bundle": "^1.7",
     "symfony/framework-bundle": "^6.0",
     "symfony/flex": ">=2.0",
+    "symfony/serializer": "6.3.*",
     "symfony/webpack-encore-bundle": "^1.11 | ^2.0",
     "symfony/ux-turbo": "^2.7",
     "symfony/stimulus-bundle": "^2.9"

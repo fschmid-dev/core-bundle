@@ -5,27 +5,34 @@ namespace FSchmidDev\CoreBundle\Entity;
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 trait UserTrait
 {
     #[ORM\Column(length: 180, unique: true)]
+    #[Groups(['user-profile'])]
     private ?string $username = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['user-profile'])]
     private ?string $email = null;
 
     #[ORM\Column]
+    #[Groups(['user-profile'])]
     private array $roles = [];
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['user-profile'])]
     private ?string $fullName = null;
 
     #[ORM\Column]
     #[Gedmo\Timestampable(on: 'create')]
+    #[Groups(['user-profile'])]
     private ?DateTimeImmutable $createdAt;
 
     #[ORM\Column]
     #[Gedmo\Timestampable(on: 'update')]
+    #[Groups(['user-profile'])]
     private ?DateTimeImmutable $updatedAt;
 
     public function getUsername(): ?string
