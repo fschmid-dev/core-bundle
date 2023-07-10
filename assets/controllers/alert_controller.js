@@ -8,7 +8,6 @@ export default class extends Controller {
     }
 
     connect() {
-        console.log('alert test');
         if (!this.element.parentElement.classList.contains('alert_container')) {
             const alertContainer = document.getElementsByClassName('alert_container')[0];
             alertContainer.appendChild(this.element);
