@@ -1,0 +1,3 @@
+fschmiddev_core_apps:
+  path: '/apps'
+  controller: FSchmidDev\CoreBundle\Controller\AppsController::apps

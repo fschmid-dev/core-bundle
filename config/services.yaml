@@ -1,0 +1,7 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  FSchmidDev\CoreBundle\Controller\AppsController:
+    class: FSchmidDev\CoreBundle\Controller\AppsController
