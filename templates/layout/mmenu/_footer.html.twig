@@ -21,7 +21,9 @@
                 {{ 'menu.apps'|trans }}
             </a>
         </span>
-        <span class="col-6 col-md-3 mb-2 mb-sm-3 mb-md-0 d-flex" {{ stimulus_controller('theme-toggle') }}>
+        <span class="col-6 col-md-3 mb-2 mb-sm-3 mb-md-0 d-flex" {{ stimulus_controller('theme-toggle', {
+            sharedCookieDomain: sharedCookieDomain
+        }) }}>
             <a href="#" class="mx-auto" {{ stimulus_action('theme-toggle', 'toggle') }}>
                 <div class="theme-dark-hide" title="{{ 'menu.theme.changeToDark'|trans }}">
                     <span class="d-flex flex-row align-items-center">

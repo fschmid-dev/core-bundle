@@ -2,7 +2,8 @@ import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
     static values = {
-        write: Boolean
+        write: Boolean,
+        sharedCookieDomain: String,
     };
 
     target = null;
@@ -20,7 +21,7 @@ export default class extends Controller {
 
         const currentTheme = getCookie('theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        setCookie('theme', newTheme, 60, '.fschmid.wip');
+        setCookie('theme', newTheme, 60, this.sharedCookieDomainValue);
 
         /*
         this.target.classList.remove(

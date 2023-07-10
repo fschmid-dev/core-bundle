@@ -136,7 +136,9 @@
                             </ul>
                         </li>
                     {% endif %}
-                    <li class="menu-item" {{ stimulus_controller('theme-toggle') }}>
+                    <li class="menu-item" {{ stimulus_controller('theme-toggle', {
+                        sharedCookieDomain: sharedCookieDomain
+                    }) }}>
                         <a href="#" class="menu-link" {{ stimulus_action('theme-toggle', 'toggle') }}>
                             <div class="theme-dark-hide" title="{{ 'menu.theme.changeToDark'|trans }}">
                                 <i class="fas fa-moon fa-lg fa-fw me-2 me-lg-0"></i>

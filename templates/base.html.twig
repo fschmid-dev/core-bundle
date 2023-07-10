@@ -25,7 +25,7 @@
                     theme = 'dark';
                 }
                 // TODO: update Cookie domain
-                setCookie('theme', theme, 60, '.fschmid.wip')
+                setCookie('theme', theme, 60, '{{ sharedCookieDomain }}')
             }
             document.getElementsByTagName('html')[0].dataset.bsTheme = theme;
 

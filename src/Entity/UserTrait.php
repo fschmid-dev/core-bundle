@@ -92,26 +92,27 @@ trait UserTrait
         return $this;
     }
 
-    public function getAvatarUrl(): ?string
+    public function getCreatedAt(): DateTimeImmutable
     {
-        if (!$this->avatar) {
-            return sprintf(
-                'https://www.gravatar.com/avatar/%s?&d=%s&s=%d',
-                md5(strtolower(trim($this->email))),
-                urlencode(
-                    sprintf(
-                        'https://robohash.org/%s',
-                        $this->username
-                    )
-                ),
-                200
-            );
-        }
+        return $this->createdAt;
+    }
 
-        if (str_starts_with($this->avatar, '/')) {
-            return $this->avatar;
-        }
+    public function setCreatedAt(DateTimeImmutable $createdAt): static
+    {
+        $this->createdAt = $createdAt;
 
-        return sprintf('/uploads/avatars/%s', $this->avatar);
+        return $this;
+    }
+
+    public function getUpdatedAt(): DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(DateTimeImmutable $updatedAt): static
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
     }
 }
