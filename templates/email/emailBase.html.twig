@@ -1,0 +1,68 @@
+<html lang="">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width"/>
+        <meta name="color-scheme" content="light dark">
+        <meta name="supported-color-schemes" content="light dark">
+    </head>
+    <body>
+        {% apply inky_to_html|inline_css(source('@email/css/foundation-emails.css'), source('@email/css/email.css')) %}
+            <container>
+                <row class="header">
+                    <columns>
+                        <center>
+                            <a href="{{ url('app_home') }}">
+                                {{ 'app.name'|trans }}
+                            </a>
+                        </center>
+                    </columns>
+                </row>
+
+                {% block title_wrapper %}
+                    <row class="title">
+                        <columns>
+                            <spacer size="35"></spacer>
+                            <h1>
+                                <center>
+                                    {% block title %}
+                                    {% endblock %}
+                                </center>
+                            </h1>
+                            <spacer size="10"></spacer>
+                        </columns>
+                    </row>
+                {% endblock %}
+                <spacer size="30"></spacer>
+
+                {% block content %}
+                {% endblock %}
+
+                <row>
+                    <columns>
+                        <hr>
+                    </columns>
+                </row>
+
+                <row class="footer">
+                    <columns>
+                        <p>
+                            {{ 'email.footer.signature'|trans|raw }}
+                        </p>
+                    </columns>
+                </row>
+                <row class="bottom">
+                    <columns>
+                        <center>
+                            <spacer size="16"></spacer>
+                            <menu>
+                                <item href="{{ path('app_home', { slug: 'impressum' }) }}">{{ 'menu.imprint'|trans }}</item>
+                                <item>|</item>
+                                <item href="{{ path('app_home', { slug: 'impressum' }) }}">{{ 'menu.privacy'|trans }}</item>
+                            </menu>
+                        </center>
+                    </columns>
+                </row>
+            </container>
+        {% endapply %}
+    </body>
+</html>
