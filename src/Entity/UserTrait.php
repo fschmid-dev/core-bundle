@@ -80,6 +80,26 @@ trait UserTrait
         return $this;
     }
 
+    public function addRoles(array ...$rolesToAdd): static
+    {
+        $roles = $this->roles;
+
+        foreach ($rolesToAdd as $role) {
+            $roles[] = $role;
+        }
+
+        $this->roles = array_unique($roles);
+
+        return $this;
+    }
+
+    public function removeRoles(array ...$rolesToRemove): static
+    {
+        $this->roles = array_diff($this->roles, $rolesToRemove);
+
+        return $this;
+    }
+
     public function getFullName(): ?string
     {
         return $this->fullName;
