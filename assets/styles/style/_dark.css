@@ -14,8 +14,8 @@
   --link-color-rgb: var(--secondary-rgb);
   --link-hover-color: var(--secondary-light);
   --link-hover-color-rgb: var(--secondary-light-rgb);
+}
 
-  .mm-listitem {
-    --mm-listitem-bg-hover: var(--dark);
-  }
+[data-bs-theme="dark"] .mm-listitem {
+  --mm-listitem-bg-hover: var(--dark);
 }
