@@ -52,20 +52,24 @@
   --red-dark: hsl(var(--red-h), var(--red-s), calc(var(--red-l) - var(--color-dark-delta)));
 
   --danger: #A94442;
-  --danger-background: #F2DEDE;
-  --danger-border: #EBCCD1;
+  --danger-background: var(--danger-bg-subtle, #F2DEDE);
+  --danger-border: var(--danger-border-subtle, #EBCCD1);
+  --danger-text: var(--danger-text-emphasis, var(--danger));
 
   --info: #31708F;
-  --info-background: #D9EDF7;
-  --info-border: #BCE8F1;
+  --info-background: var(--info-bg-subtle, #D9EDF7);
+  --info-border: var(--info-border-subtle, #BCE8F1);
+  --info-text: var(--info-text-emphasis, var(--info));
 
   --success: #3C763D;
-  --success-background: #DFF0D8;
-  --success-border: #D6E9C6;
+  --success-background: var(--success-bg-subtle, #DFF0D8);
+  --success-border: var(--success-border-subtle, #D6E9C6);
+  --success-text: var(--success-text-emphasis, var(--success));
 
   --warning: #8A6D3B;
-  --warning-background: #FCF8E3;
-  --warning-border: #FAEBCC;
+  --warning-background: var(--warning-bg-subtle, #FCF8E3);
+  --warning-border: var(--warning-border-subtle, #FAEBCC);
+  --warning-text: var(--warning-text-emphasis, var(--warning));
 
   --header-bg: var(--primary);
   --header-hover: var(--primary-light);

@@ -1,11 +1,18 @@
 <header
         id="header"
-        class="header navbar navbar-expand-md navbar-dark py-0 sticky-top sticky justify-content-between animate-color-change"
+        class="header navbar navbar-expand-md navbar-dark py-0 sticky-top sticky justify-content-between animate-color-change flex-column"
         {{ stimulus_controller('mmenu', {
             navbarContent: include('@FSchmidDevCore/layout/mmenu/_navbar.html.twig'),
             footerContent: include('@FSchmidDevCore/layout/mmenu/_footer.html.twig')
         }) }}
 >
+    {% if app.request.host ends with '.wip' %}
+        <div class="alert alert-warning p-1 w-100">
+            <div class="text-center">
+                <span>Localhost Development</span>
+            </div>
+        </div>
+    {% endif %}
     <div class="container-fluid align-items-stretch">
         {% block header_brand %}
             <a href="{{ path('app_home') }}" class="navbar-brand header__brand align-self-stretch"
